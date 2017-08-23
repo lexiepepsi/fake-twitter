@@ -1,0 +1,10 @@
+<div class="tweet">
+	<h3 class="content"> <%= link_to(tweet.title, tweet) %> </h3>
+	<p class="content"> <%= tweet.body %> </p>
+	<p class="timestamp">Tweeted at: <%= tweet.created_at %></p>
+
+	<ul>
+		<li class="button"><%= edit_tweet_link(tweet) %></li>
+		<li class="button"><%= delete_tweet_link(tweet) %></li>
+	</ul>
+</div>

@@ -1,0 +1,125 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+	margin: 8%;
+	text-align: center;
+	background-color: lightseagreen;
+	font-family: sans-serif;
+	font-weight: bold;
+	color: navy;
+	font-size: 16px;
+}
+
+.header {
+	margin-bottom: 10px;
+	font-family: 'Rock Salt', cursive;
+	color: lightseagreen;
+	font-size: 50px;
+	background-color: teal;
+	border-radius: 5px;
+	border: 5px solid midnightblue;
+	padding: 20px;
+}
+
+a {
+	color: teal;
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
+
+.notice {
+	color: lightseagreen;
+	background-color: aliceblue;
+	padding: 10px;
+	font-size: 20px;
+}
+
+.alert,
+.error-messages {
+	color: red;
+	background-color: aliceblue;
+	padding: 10px;
+	font-size: 20px;
+}
+
+.tweet {
+	margin-left: 17%;
+	margin-right: 17%;
+	margin-top: 10px;
+	background-color: #bced25;
+	border: 3px solid midnightblue;
+	border-radius: 5px;	
+	font-size: 20px;
+	padding: 10px;
+}
+
+.tweet p {
+	padding: 5px;
+}
+
+.content a {
+	color: midnightblue;
+}
+
+.content {
+	color: midnightblue;
+}
+
+.timestamp {
+	font-weight: normal;
+	font-size: 12px;
+}
+
+.tweethome {
+	background-color: #a7cd32;
+	margin: 20px;
+	padding: 15px;
+	border-radius: 5px;	
+	border: 5px solid midnightblue;
+}
+
+li {
+	display: inline-block;
+}
+
+.button {
+	margin-top: 5px;
+	background-color: midnightblue;
+	padding: 5px;
+	font-size: 14px;
+	border-radius: 3px;
+}
+
+.button a {
+	color: lightseagreen;
+	font-family: sans-serif;
+	font-weight: bold;
+}
+
+.field_with_errors {
+	display: inline;
+	color: red;
+}
+
+.field_with_errors input {
+	border: 2px solid red;
+}
+
+
