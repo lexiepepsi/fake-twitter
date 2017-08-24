@@ -1,6 +1,15 @@
 <div class="tweet">
 	<h3 class="content"> <%= link_to(tweet.title, tweet) %> </h3>
 	<p class="content"> <%= tweet.body %> </p>
+
+	<% if tweet.user %>	
+		<p class="content"> user: <%= tweet.user.email %></p>
+	<% end %>
+
+	<!-- if tweets belongs to user, email, OR, anonymous (.try function looks for not nil and if it is nil it 'absorbs' the nil so it doesn't show an error)
+	<p>user: <%= tweet.user.try(:email) || 'Anonymous' %></p>
+	-->
+
 	<p class="timestamp">Tweeted at: <%= tweet.created_at %></p>
 
 	<ul>

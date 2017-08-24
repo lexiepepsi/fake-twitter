@@ -15,7 +15,13 @@ class TweetsController < ApplicationController
 	end
 
 	def create
-		@tweet = Tweet.create(tweet_params)
+		# @tweet = Tweet.create(tweet_params) #where the tweet literally gets created
+
+		# @tweet = Tweet.new(tweet_params)
+		# @tweet.user = current_user
+		# @tweet.save
+
+		@tweet = current_user.tweets.create(tweet_params)
 
 		if @tweet.valid?
 			redirect_to_tweet('Your tweet was sucessfully created!')
