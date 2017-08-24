@@ -1,5 +1,7 @@
 class TweetsController < ApplicationController
-	before_action(:authenticate_user!)
+	# before_action(:authenticate_user!, only: [:new, :create, :edit, :update, :destroy])
+	# same below but easier
+	before_action(:authenticate_user!, except: [:index, :show])
 # use before action to do something before these specific actions
 
 	before_action(:find_tweet, only: [:show, :edit, :update, :destroy])

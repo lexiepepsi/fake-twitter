@@ -25,6 +25,20 @@
 		<ul class="nav">
 			<li class="button"> <%= link_to('All Tweets', root_path) %></li>
 			<li class="button"><%= link_to('Create a New Tweet', new_tweet_path) %></li>
+
+				<% if user_signed_in? %>
+					<li>User: <%= current_user.email %></li>
+					<li><%= link_to('Log Out', '#') %></li>
+
+				<% else %>
+
+					<li><%= link_to('Log In', '#') %></li>
+					<li><%= link_to('Sign Up', '#') %></li>
+
+				<% end %>
+				
+			</li>
+
 		</ul>
 
 	
