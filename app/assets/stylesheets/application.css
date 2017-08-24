@@ -15,7 +15,8 @@
  */
 
 body {
-	margin: 8%;
+	margin-left: 8%;
+	margin-right: 8%;
 	text-align: center;
 	background-color: lightseagreen;
 	font-family: sans-serif;
@@ -26,6 +27,7 @@ body {
 
 .header {
 	margin-bottom: 10px;
+	margin-top: 5%;
 	font-family: 'Rock Salt', cursive;
 	color: lightseagreen;
 	font-size: 50px;
@@ -33,6 +35,16 @@ body {
 	border-radius: 5px;
 	border: 5px solid midnightblue;
 	padding: 20px;
+}
+
+.login {
+	margin-top: 20px;
+	margin-right: 10px;
+	text-align: right;
+}
+
+.nav {
+	margin: 10px;
 }
 
 a {
@@ -49,14 +61,21 @@ ul {
 	background-color: aliceblue;
 	padding: 10px;
 	font-size: 20px;
+	margin-left: 20%;
+	margin-right: 20%;
 }
 
 .alert,
 .error-messages {
 	color: red;
 	background-color: aliceblue;
-	padding: 10px;
+	padding: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 20%;
+	margin-right: 20%;
 	font-size: 20px;
+	border: 2px solid red;
 }
 
 .tweet {
@@ -122,4 +141,10 @@ li {
 	border: 2px solid red;
 }
 
+
+@media all and (max-width: 600px) {
+	.header {
+	font-size: 30px;
+	}
+}
 

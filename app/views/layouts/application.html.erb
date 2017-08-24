@@ -18,27 +18,26 @@
 
 	<body>
 
+		<div class="login">
+			<% if user_signed_in? %>
+				<li>Logged in as: <%= current_user.email %></li>
+				<li class="button"><%= link_to('Log Out', destroy_user_session_path, method: :delete) %></li>
+
+			<% else %>
+
+				<li class="button"><%= link_to('Log In', new_user_session_path) %></li>
+				<li class="button"><%= link_to('Sign Up', new_user_registration_path) %></li>
+
+			<% end %>
+		</div>
+
 		<div class="surround">
-			<h1 class="header">{Fake}Twitter</h1>
+			<a href="/"><h1 class="header">{Fake}Twitter</h1>
 		</div>
 
 		<ul class="nav">
 			<li class="button"> <%= link_to('All Tweets', root_path) %></li>
 			<li class="button"><%= link_to('Create a New Tweet', new_tweet_path) %></li>
-
-				<% if user_signed_in? %>
-					<li>User: <%= current_user.email %></li>
-					<li><%= link_to('Log Out', destroy_user_session_path, method: :delete) %></li>
-
-				<% else %>
-
-					<li><%= link_to('Log In', new_user_session_path) %></li>
-					<li><%= link_to('Sign Up', new_user_registration_path) %></li>
-
-				<% end %>
-				
-			</li>
-
 		</ul>
 
 	
