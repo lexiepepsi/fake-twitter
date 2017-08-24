@@ -4,7 +4,7 @@ Rails.application.routes.draw do
  	resources(:tweets)
 end
 
-#  Prefix Verb   URI Pattern                    Controller#Action
+				#  Prefix Verb   URI Pattern                    Controller#Action
 #                     root GET    /                              tweets#index
 #         new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
 #             user_session POST   /users/sign_in(.:format)       devise/sessions#create
@@ -21,6 +21,8 @@ end
 #                          PATCH  /users(.:format)               devise/registrations#update
 #                          PUT    /users(.:format)               devise/registrations#update
 #                          DELETE /users(.:format)               devise/registrations#destroy
+
+
 #                   tweets GET    /tweets(.:format)              tweets#index
 #                          POST   /tweets(.:format)              tweets#create
 #                new_tweet GET    /tweets/new(.:format)          tweets#new
