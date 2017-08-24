@@ -34,7 +34,7 @@ body {
 	background-color: teal;
 	border-radius: 5px;
 	border: 5px solid midnightblue;
-	padding: 20px;
+	padding: 30px;
 }
 
 .login {
@@ -145,6 +145,7 @@ li {
 @media all and (max-width: 600px) {
 	.header {
 	font-size: 30px;
+	padding: 15px;
 	}
 }
 

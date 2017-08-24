@@ -8,12 +8,12 @@
 
 <%= form_for(@tweet) do |f| %>
 
-	<p>
+	<p class="tweet-form">
 		<%= f.label(:title) %>
 		<%= f.text_field(:title, placeholder: 'Enter title here') %>
 	</p>
 
-	<p>
+	<p class="tweet-form">
 		<%= f.label(:body) %>
 		<%= f.text_field(:body, placeholder: 'Enter body here') %>
 	</p>
