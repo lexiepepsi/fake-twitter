@@ -1,10 +1,14 @@
 <div class="tweet">
+
+
 	<h3 class="content"> <%= link_to(tweet.title, tweet) %> </h3>
 	<p class="content"> <%= tweet.body %> </p>
 
 	<% if tweet.user %>	
-		<p class="content"> user: <%= tweet.user.email %></p>
+		<p class="content"> user: <%= link_to(tweet.user.email, tweet.user) %></p>
 	<% end %>
+
+	<p><%= link_to(image_tag(tweet.image.url(:thumbnail)), tweet.image.url) %></p>
 
 	<!-- if tweets belongs to user, email, OR, anonymous (.try function looks for not nil and if it is nil it 'absorbs' the nil so it doesn't show an error)
 	<p>user: <%= tweet.user.try(:email) || 'Anonymous' %></p>
@@ -12,8 +16,11 @@
 
 	<p class="timestamp">Tweeted at: <%= tweet.created_at %></p>
 
-	<ul>
-		<li class="button"><%= edit_tweet_link(tweet) %></li>
-		<li class="button"><%= delete_tweet_link(tweet) %></li>
-	</ul>
+	<% if tweet.admin_or_belongs_to?(current_user) %>
+		<ul>
+			<li class="button"><%= edit_tweet_link(tweet) %></li>
+			<li class="button"><%= delete_tweet_link(tweet) %></li>
+		</ul>
+	<% end %>
+
 </div>

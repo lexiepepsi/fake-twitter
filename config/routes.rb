@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 	root('tweets#index')
 	devise_for(:users)
  	resources(:tweets)
- 	resources(:users, only: :show)
+ 	resources(:users, only: [:index, :show])
 end
 
 				#  Prefix Verb   URI Pattern                    Controller#Action

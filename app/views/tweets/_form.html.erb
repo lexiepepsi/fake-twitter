@@ -18,6 +18,18 @@
 		<%= f.text_field(:body, placeholder: 'Enter body here') %>
 	</p>
 
+	<p class="tweet-form">
+		<%= f.label(:image) %>
+		<%= f.file_field(:image) %>
+	</p>
+
+	<% if current_user.admin? %>
+		<p class="tweet-form">
+			<%= f.label(:user_id) %>
+			<%= f.collection_select(:user_id, User.all, :id, :email) %>
+		</p>
+	<% end %>
+
 	<p>
 		<%= f.submit %>
 	</p>

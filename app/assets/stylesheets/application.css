@@ -118,6 +118,10 @@ li {
 	display: inline-block;
 }
 
+.user-list li {
+	display: block;
+}
+
 .button {
 	margin-top: 5px;
 	background-color: midnightblue;
@@ -149,3 +153,7 @@ li {
 	}
 }
 
+.user-view {
+	font-size: 25px;
+	color: blue;
+}

@@ -1,4 +1,6 @@
-<h2>User: <%= @user.email %></h2>
+<h2 class="user-view">User: <%= @user.email %></h2>
+
+<p class="user-view">has tweeted <%= pluralize(@user.tweets.count, 'tweet') %>!!!</p>
 
 
 <%= render(@user.tweets) %>

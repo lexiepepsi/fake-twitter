@@ -5,9 +5,10 @@ class TweetsController < ApplicationController
 # use before action to do something before these specific actions
 
 	before_action(:find_tweet, only: [:show, :edit, :update, :destroy])
+	before_action(:redirect_to_homepage_unless_tweet_belongs_to_current_user, only: [:edit, :update])
 
 	def index
-		@tweets = Tweet.all
+		@tweets = Tweet.search(params[:query])
 	end
 
 	def new
@@ -31,6 +32,14 @@ class TweetsController < ApplicationController
 			# instead of rendering create, render new view instead
 		end
 	end
+
+	#make sure the not logged in user cannot get to edit page of a tweet is not theirs
+	# def edit 
+	# 	unless @tweet.user == current_user
+	# 		redirect_to(root_path, notice: "That's not your tweet")
+	# 	end
+	# end
+
 
 	def update
 		@tweet.update(tweet_params)
@@ -56,11 +65,17 @@ class TweetsController < ApplicationController
 	end
 
 	def tweet_params
-		params[:tweet].permit(:title, :body)
+		params[:tweet].permit(:title, :body, :user_id, :image)
 	end
 
 	def redirect_to_tweet(message)
 		redirect_to(@tweet, notice: message)
+	end
+
+	def redirect_to_homepage_unless_tweet_belongs_to_current_user
+		unless @tweet.admin_or_belongs_to?(current_user)
+			redirect_to(root_path, notice: 'That is not your tweet!')
+		end
 	end
 
 end

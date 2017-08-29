@@ -1,3 +1,14 @@
-<%= render(@tweets) %>
+<% if params[:query] %>
+ <h2>Searching for: <%= params[:query] %></h2>
+<% else %>
+ <h2>All Tweets</h2>
+<% end %>
+
+
+<% if @tweets.any? %>
+	<%= render(@tweets) %>
+<% else %>
+	<p>No tweets found.</p>
+<% end %>
 
 
