@@ -20,6 +20,13 @@ test:
   <<: *default
   database: db/test.sqlite3
 
+# Original Code, comment out on 8.30
+# production:
+#   <<: *default
+#   database: db/production.sqlite3
+
+# Update on 8.30 before Heroku Deploy
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
