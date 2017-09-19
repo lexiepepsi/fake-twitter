@@ -8,7 +8,7 @@ class TweetsController < ApplicationController
 	before_action(:redirect_to_homepage_unless_tweet_belongs_to_current_user, only: [:edit, :update])
 
 	def index
-		@tweets = Tweet.search(params[:query])
+		@tweets = Tweet.search(params[:query]).reorder(created_at: :desc)
 	end
 
 	def new
